@@ -1,0 +1,259 @@
+@import '../mixin';
+
+.container {
+    max-width: 1440px;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 0px 15px;
+
+    >div {
+        ul {
+            >li {
+                >.carousel__img {
+                    >img {
+                        width: 100%;
+                        object-fit: cover;
+                        border-radius: 24px;
+                    }
+                }
+            }
+        }
+    }
+
+    .categories__grid__row {
+        @include grid(repeat(3, 1fr), $gcg: 40px);
+        max-width: fit-content;
+        margin: 30px auto 70px auto;
+
+        @include for_breakpoint(mobile) {
+            @include flex(row, center, flex-start);
+            max-width: 100%;
+            overflow-x: auto;
+            gap: 10px !important;
+        }
+
+        >div {
+            >p {
+                text-align: center;
+                font-size: 18px !important;
+                font-weight: 500;
+
+                @include for_breakpoint(mobile) {
+                    font-size: 14px !important;
+                }
+            }
+        }
+    }
+
+    >.offers__container_grid_row {
+        @include grid(repeat(3, 1fr), $gcg: 20px);
+        margin: 40px auto;
+
+        @include for_breakpoint(LargeMidTablet) {
+            @include grid(repeat(2, 1fr));
+        }
+
+        >div {
+            height: auto;
+            position: relative;
+            top: 0;
+
+            >img {
+                object-fit: cover;
+                position: relative;
+                top: 0;
+                border-radius: 12px;
+                width: 100%;
+                height: 220px;
+
+                @include for_breakpoint(mobile) {
+                    height: 161px;
+                }
+            }
+
+            >div:nth-child(2) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.55);
+                height: 220px;
+                width: 100%;
+                border-radius: 12px;
+
+                @include for_breakpoint(mobile) {
+                    height: 161px;
+                }
+            }
+
+            >div:nth-child(3) {
+                max-width: 65%;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 20px;
+
+                @include for_breakpoint(mobile) {
+                    max-width: 100%;
+                    left: 10px;
+                }
+
+                >p {
+                    &:nth-child(1) {
+                        color: #999999;
+                        margin-bottom: 5px;
+                        font-weight: 500;
+
+                        @include for_breakpoint(mobile) {
+                            font-size: 12px;
+                        }
+
+                        @include for_breakpoint(SmallMobile) {
+                            font-size: 11px;
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        font-size: 22px;
+                        font-weight: 800;
+
+                        @include for_breakpoint(mobile) {
+                            font-size: 16px;
+                        }
+
+                        @include for_breakpoint(SmallMobile) {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                >h3 {
+                    color: white;
+                    font-size: 22px;
+                    font-weight: 600;
+                    margin-bottom: 5px;
+
+                    @include for_breakpoint(mobile) {
+                        font-size: 16px;
+                    }
+
+                    @include for_breakpoint(SmallMobile) {
+                        font-size: 14px;
+                    }
+                }
+
+                >button {
+                    @include button(rgba(0, 0, 0, 0.2), $h: 40px);
+                    padding: 0px 20px;
+                    margin-top: 8px;
+                    backdrop-filter: blur(30px);
+                    transition: 0.5s ease-in-out;
+
+                    >svg {
+                        font-size: 22px;
+                        transition: 0.5s ease-in-out;
+                    }
+
+                    &:hover {
+                        @include button(rgba(255, 255, 255, 0.4), $h: 40px);
+                        backdrop-filter: blur(50px);
+
+                        >svg {
+                            margin-left: 5px;
+                        }
+                    }
+
+                    @include for_breakpoint(mobile) {
+                        padding: 0px 10px;
+                        margin-top: 8px;
+                        backdrop-filter: blur(30px);
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Dots component starts here
+.react-multiple-carousel__arrow {
+    z-index: 2 !important;
+}
+
+.react-multi-carousel-dot-list {
+    bottom: 20px !important;
+}
+
+.react-multi-carousel-dot button {
+    border: 0px !important;
+}
+
+
+.react-multi-carousel-dot button {
+    width: 8px !important;
+    height: 8px !important;
+    background-color: white;
+}
+
+
+.react-multi-carousel-dot--active button {
+    width: 30px !important;
+    background: #003049 !important;
+    border-radius: 20px !important;
+}
+
+// Dots component ends here
+
+
+/* CSS */
+
+.button-92 {
+    background-color: #ffff;
+    color: #999999;
+    padding: 10px 25px;
+    border: 1px solid rgba(0, 48, 73, 0.25);
+    border-radius: 40px;
+    position: relative;
+    top: 0;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    &:hover {
+        background-color: #003049;
+
+        >.traingle {
+            border-color: transparent transparent rgba(0, 48, 73, 1) transparent;
+        }
+
+        >p {
+            color: white;
+        }
+    }
+
+    >.traingle {
+        border-color: transparent transparent rgba(0, 48, 73, 0) transparent;
+        border-style: solid;
+        border-width: 0px 12px 12px 12px;
+        height: 0px;
+        width: 0px;
+        position: absolute;
+        bottom: -12px;
+        right: 20px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        transform: rotate(180deg);
+    }
+}
+
+.active__button {
+    --c: #fff;
+    background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p, 100%)/300% no-repeat,
+        #003049;
+
+    >p {
+        color: white;
+    }
+
+    >.traingle {
+        border-color: transparent transparent rgba(0, 48, 73, 1) transparent;
+    }
+}

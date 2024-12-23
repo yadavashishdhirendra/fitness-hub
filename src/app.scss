@@ -1,0 +1,21 @@
+// @import './mixin';
+@import './Styles/Home.scss';
+
+// Color Palette
+// #780000, #c1121f, #fdf0d5, #003049, #669bbc
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  transition: 0.2s ease-in-out;
+  font-family: "Lexend", serif;
+  letter-spacing: 0.5px;
+}
+
+body,
+html {
+  background-color: #f7f7f7;
+  overflow-x: hidden;
+}
