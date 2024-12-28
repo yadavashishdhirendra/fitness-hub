@@ -3,6 +3,7 @@ import '../Styles/Home.scss'
 import Carousel from '../Components/Carousel'
 import { Button } from '@mui/material';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import Marquee from 'react-fast-marquee';
 
 const CAROUSEL_ARR = [
     {
@@ -122,8 +123,16 @@ const Home = () => {
     const [activeIndex, setActiveIndex] = useState(0)
     return (
         <Fragment>
-            <div className="container">
 
+            {/* Marquee Container starts here */}
+            <div className='marquee__container__row'>
+                <Marquee>
+                    💪🔥 Get 50% OFF on Gym Memberships! Limited Period Offer – Buy 1-Year Membership & Get 2 Months FREE! 🏋️‍♂️🎁 Hurry, Join Now! ⏳
+                </Marquee>
+            </div>
+            {/* Marquee Container ends here */}
+
+            <div className="container">
                 {/* Carousel component starts here */}
                 <Carousel responsive={responsive} data={CAROUSEL_ARR} />
                 {/* Carousel component ends here */}
@@ -198,7 +207,7 @@ const Home = () => {
 
 
                 {/* Gallery Component starts here */}
-<div></div>
+                <div></div>
                 {/* Gallery Component ends here */}
 
             </div>

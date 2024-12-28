@@ -1,5 +1,17 @@
 @import '../mixin';
 
+.marquee__container__row {
+    background-color: rgba(0, 48, 73, 0.65);
+    color: white;
+    padding: 8px 0px;
+
+    .rfm-child {
+        font-family: "Merienda", serif;
+        font-size: 14px;
+        letter-spacing: 0.05rem;
+    }
+}
+
 .container {
     max-width: 1440px;
     margin: auto;
