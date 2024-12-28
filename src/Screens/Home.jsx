@@ -45,7 +45,7 @@ const PRODUCTS_OFFER_ARR = [
     {
         id: 1,
         offer_img: require('../Assets/Home/categories/img-collection.webp'),
-        offer_name: "Clearance",
+        offer_name: "Clearance🧹",
         offer_title: "Reload Supplements",
         offer_percent: "20% Off",
         color: '#f2cb1f'
@@ -53,7 +53,7 @@ const PRODUCTS_OFFER_ARR = [
     {
         id: 2,
         offer_img: require('../Assets/Home/categories/img-collection-2.webp'),
-        offer_name: "What’s hot",
+        offer_name: "What’s hot♨️",
         offer_title: "Best-selling Protein Products",
         offer_percent: "Up to 50% off",
         color: "#2dbcfe"
@@ -61,11 +61,59 @@ const PRODUCTS_OFFER_ARR = [
     {
         id: 3,
         offer_img: require('../Assets/Home/categories/img-collection-3.webp'),
-        offer_name: "Available now",
+        offer_name: "Available now🫠",
         offer_title: "Gold Standard 100% Whey",
         offer_percent: "From $199.00",
         color: "orange"
     },
+]
+
+const PRODUCTS_ARR = [
+    {
+        id: 1,
+        percentage_off: "7% Off",
+        product_name: "Biozyme Performance Whey,",
+        wght: "4.4 lb Choco Crispers",
+        new_price: "5,099",
+        old_price: "5,499",
+        product_uri: require('../Assets/Home/products/pck_3568539_c_m.webp')
+    },
+    {
+        id: 2,
+        percentage_off: "36% Off",
+        product_name: "Super Gainer XXL Weight Gainer,",
+        wght: "6.6 lb Chocolate",
+        new_price: "2,749",
+        old_price: "4,299",
+        product_uri: require('../Assets/Home/products/prd_2989517-MuscleBlaze-High-Protein-Peanut-Butter-1-kg-Dark-Chocolate-Creamy_c_m.webp')
+    },
+    {
+        id: 3,
+        percentage_off: "36% Off",
+        product_name: "MuscleBlaze Pre Workout WrathX 0.75 lb Cola Frost & Creatine...",
+        wght: "",
+        new_price: "1,749",
+        old_price: "2,748",
+        product_uri: require('../Assets/Home/products/prd_3251359-MuscleBlaze-Super-Gainer-XXL-Weight-Gainer-6.webp')
+    },
+    {
+        id: 4,
+        percentage_off: "30% Off",
+        product_name: "Biozyme 5 in 1 Multivitamin,",
+        wght: "90 tablet(s) Unflavoured",
+        new_price: "899",
+        old_price: "1,299",
+        product_uri: require('../Assets/Home/products/prd_3542923-MuscleBlaze-Biozyme-5-in-1-Multivitamin-90-tablets-Unflavoured_c_m.webp')
+    },
+    {
+        id: 5,
+        percentage_off: "16% Off",
+        product_name: "High Protein Peanut Butter",
+        wght: "1 Kg Dark Chocolate Creamy",
+        new_price: "625",
+        old_price: "749",
+        product_uri: require('../Assets/Home/products/prd_3577745-MuscleBlaze-Biozyme-Performance-Whey-4.webp')
+    }
 ]
 
 const Home = () => {
@@ -86,7 +134,7 @@ const Home = () => {
                                 <img src={i.offer_img} alt="" />
                                 <div className="overlay__img"></div>
                                 <div>
-                                    <p>{i.offer_name} -</p>
+                                    <p>{i.offer_name}</p>
                                     <h3>{i.offer_title}</h3>
                                     <p style={{ color: i.color }}>{i.offer_percent}</p>
                                     <Button>Shop Now&nbsp; <ArrowRightAltIcon /></Button>
@@ -97,6 +145,14 @@ const Home = () => {
                     <div></div>
                 </div>
                 {/* offers component ends here */}
+
+                {/* Our Products Header starts here */}
+                <div className='our__products__container'>
+                    <p>SHOP OUR NEW RELEASES
+                    </p>
+                    <h2>Our Products</h2>
+                </div>
+                {/* Our Products Header ends here */}
 
                 {/* Shop By Category */}
                 <div className='categories__grid__row'>
@@ -111,11 +167,27 @@ const Home = () => {
                 </div>
                 {/* Shop By Category */}
 
-                {/* Our Products starts here */}
-                <div>
-                    <p></p>
+
+                {/* Products container starts here */}
+                <div className="products__container_grid__row">
+                    {
+                        PRODUCTS_ARR && PRODUCTS_ARR?.map((i, index) => (
+                            <div key={index}>
+                                <img src={i.product_uri} alt="" />
+                                <div>
+                                    <h3>{i.product_name}</h3>
+                                    <p>{i.wght}</p>
+                                    <p>
+                                        ₹{i.new_price} <span className='old__price'>₹{i.old_price}</span>&nbsp;&nbsp; <span className='save__price'>Save ₹{i.percentage_off}</span>
+                                    </p>
+                                </div>
+                                <Button>Add To Cart</Button>
+                            </div>
+                        ))
+                    }
                 </div>
-                {/* Our Products ends here */}
+                {/* products container ends here */}
+
 
             </div>
         </Fragment>
