@@ -25,11 +25,16 @@
         max-width: fit-content;
         margin: 30px auto 70px auto;
 
+        @include for_breakpoint(mediumTablet) {
+            margin: 30px auto 30px auto;
+        }
+
         @include for_breakpoint(mobile) {
             @include flex(row, center, flex-start);
             max-width: 100%;
             overflow-x: auto;
             gap: 10px !important;
+            height: 80px;
         }
 
         >div {
@@ -207,12 +212,15 @@
         }
 
         >div {
+            position: relative;
+            top: 0;
             padding: 20px 15px;
             background-color: white;
             @include flex(column, flex-start);
             cursor: pointer;
             border: 1px solid rgba(0, 0, 0, 0.10);
             border-radius: 12px;
+            overflow: hidden;
 
             // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
             &:hover {
@@ -226,6 +234,20 @@
             >img {
                 width: 80%;
                 margin: auto;
+            }
+
+            >.svg__icon {
+                position: absolute;
+                top: -3px;
+
+                >p {
+                    position: absolute;
+                    top: -3px !important;
+                    color: white;
+                    font-size: 12px !important;
+                    text-align: center;
+                    left: 5px;
+                }
             }
 
             >div {
@@ -274,9 +296,14 @@
 
             >button {
                 margin-top: 15px;
-                @include button($bg: #003049, $w: 100%, $h: 44px, $br: 12px);
+                @include button($bg: #003049, $w: 100%, $h: 44px, $br: 4px);
                 font-size: 16px;
                 text-transform: uppercase !important;
+
+                @include for_breakpoint(mobile) {
+                    @include button($bg: #003049, $w: 100%, $h: 38px, $br: 4px);
+                    font-size: 14px;
+                }
             }
         }
     }
