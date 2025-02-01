@@ -161,7 +161,7 @@ const Home = () => {
                 <div className='our__products__container'>
                     <p>SHOP OUR NEW RELEASES
                     </p>
-                    <h2>Our Products</h2>
+                    <h2>Our Product</h2>
                 </div>
                 {/* Our Products Header ends here */}
 
