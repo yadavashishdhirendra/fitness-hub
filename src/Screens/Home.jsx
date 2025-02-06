@@ -4,6 +4,7 @@ import Carousel from '../Components/Carousel'
 import { Button } from '@mui/material';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import Marquee from 'react-fast-marquee';
+import Header from '../Components/Header';
 
 const CAROUSEL_ARR = [
     {
@@ -131,6 +132,10 @@ const Home = () => {
                 </Marquee>
             </div>
             {/* Marquee Container ends here */}
+
+            {/* Navbar Component starts here */}
+            <Header />
+            {/* Navbar Component ends here */}
 
             <div className="container">
                 {/* Carousel component starts here */}

@@ -5,7 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 const Slider = ({ responsive, data }) => {
     return (
         <Fragment>
-            <Carousel autoPlay={true} showDots autoPlaySpeed={5000} infinite responsive={responsive}>
+            <Carousel autoPlay={false} showDots autoPlaySpeed={5000} infinite responsive={responsive}>
                 {
                     data && data?.map((i, index) => (
                         <div key={index} className='carousel__img'>
