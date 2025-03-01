@@ -38,6 +38,19 @@
 
 
 // Banner Css starts here
+
+.previous {
+    text-decoration: none !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #999999 !important;
+    &:hover{
+        text-decoration: underline !important;
+    }
+}
+
 /* Full-width Banner */
 .banner-container {
     position: relative;
@@ -190,7 +203,7 @@
     }
 }
 
-.end{
+.end {
     color: #999999 !important;
     font-weight: 600;
     font-size: 14px;

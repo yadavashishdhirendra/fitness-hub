@@ -4,6 +4,7 @@ import Header from '../Components/Header'
 import { ChevronLeft, ChevronRight, ArrowBigRightDash } from "lucide-react";
 import { Button } from '@mui/material';
 import '../Styles/Home.scss'
+import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/Product.scss'
 import { PRODUCTS_ARR } from './Home';
 import Accordion from '@mui/material/Accordion';
@@ -13,11 +14,11 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Link from '@mui/material/Link';
 import HomeIcon from '@mui/icons-material/Home';
 import GrainIcon from '@mui/icons-material/Grain';
 
 const Products = () => {
+    const navigate = useNavigate();
     const textSlides = [
         "Welcome to Our\nPlatform!",
         "Experience the\nBest Services Available.",
@@ -81,7 +82,8 @@ const Products = () => {
                         underline="hover"
                         sx={{ display: 'flex', alignItems: 'center' }}
                         color="inherit"
-                        href="/"
+                        to="/"
+                        className='previous'
                     >
                         <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
                         Home
@@ -96,7 +98,7 @@ const Products = () => {
                         Core
                     </Link> */}
                     <Typography
-                    fontFamily={'Montserrat'}
+                        fontFamily={'Montserrat'}
                         sx={{ color: 'text.primary', display: 'flex', alignItems: 'center' }}
                     >
                         <GrainIcon sx={{ mr: 0.5 }} fontSize="inherit" />
@@ -197,7 +199,7 @@ const Products = () => {
                         <div className="products__container_grid__row our__products" style={{ gridTemplateColumns: "repeat(3,1fr)" }}>
                             {
                                 PRODUCTS_ARR && PRODUCTS_ARR?.map((i, index) => (
-                                    <div key={index}>
+                                    <div onClick={() => navigate(`/products/${i.id}/${i.product_name}`)} key={index}>
                                         <div className='svg__icon'>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="50.216" height="68.757" viewBox="0 0 50.216 68.757">
                                                 <path id="Group_427321710" data-name="Group 427321710" d="M35.389-5H.172V17.683s0,0,0,0V38.563c0,.483.452.918,1.146,1.1a2.653,2.653,0,0,0,2.023-.259l3.938-2.532,3.938,2.532a2.638,2.638,0,0,0,2.625,0l3.938-2.532,3.938,2.532a2.639,2.639,0,0,0,2.625,0l3.938-2.533,3.938,2.533a2.654,2.654,0,0,0,2.023.259c.694-.185,1.146-.62,1.146-1.1V-5Z" transform="translate(-0.172 5)" fill="#23a247" fill-rule="evenodd" />
