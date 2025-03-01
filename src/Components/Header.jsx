@@ -1,10 +1,11 @@
-import { AppBar, IconButton, Toolbar, Typography } from '@mui/material'
+import { AppBar, Button, IconButton, Toolbar, Typography } from '@mui/material'
 import { styled, alpha } from '@mui/material/styles';
 import React, { Fragment } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import Logo from '../Assets/Icon/logo__arfanutrition.png'
+import { ShoppingBagIcon } from 'lucide-react';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -71,6 +72,9 @@ const Header = () => {
                     >
                         <img src={Logo} alt="" />
                     </Typography>
+                    <Button className='cart__icon'>
+                        <ShoppingBagIcon size={24} color='white' />
+                    </Button>
                     <Search>
                         <SearchIconWrapper>
                             <SearchIcon />
