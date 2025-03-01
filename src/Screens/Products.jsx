@@ -1,7 +1,7 @@
 import React, { Fragment, useCallback, useEffect, useState } from 'react'
 import Marquee from 'react-fast-marquee'
 import Header from '../Components/Header'
-import { ChevronLeft, ChevronRight, ArrowBigRightDash } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from '@mui/material';
 import '../Styles/Home.scss'
 import { Link, useNavigate } from 'react-router-dom';
@@ -16,6 +16,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import HomeIcon from '@mui/icons-material/Home';
 import GrainIcon from '@mui/icons-material/Grain';
+import { ArrowForwardSharp } from '@mui/icons-material';
 
 const Products = () => {
     const navigate = useNavigate();
@@ -119,7 +120,7 @@ const Products = () => {
                                             <br />
                                         </Fragment>
                                     ))}
-                                    <Button className='button__shop__now'>Shop Now&nbsp; <ArrowBigRightDash size={24} /></Button>
+                                    <Button className='button__shop__now'>Shop Now&nbsp; <ArrowForwardSharp /></Button>
                                 </h1>
 
                             </div>

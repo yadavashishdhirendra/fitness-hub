@@ -46,7 +46,8 @@
     align-items: center !important;
     justify-content: center !important;
     color: #999999 !important;
-    &:hover{
+
+    &:hover {
         text-decoration: underline !important;
     }
 }
@@ -209,4 +210,45 @@
     font-size: 14px;
     margin-top: 50px;
     text-align: center;
+}
+
+
+.product__details__container {
+    @include grid(0.6fr 1fr, 40px, 40px);
+    margin-top: 30px;
+
+    @include for_breakpoint(tablet) {
+        @include grid(1fr 1fr, 40px, 40px);
+    }
+
+    @include for_breakpoint(mediumTablet) {
+        @include grid(1fr, 40px, 40px);
+    }
+
+    >div {
+        // border: 1px solid black;
+        height: auto;
+    }
+}
+
+.carousel__img>img {
+    width: 100px !important;
+}
+
+.similar__prod__container {
+    margin-top: 60px;
+
+    >h2 {
+        margin-bottom: 30px;
+        font-size: 32px;
+    }
+}
+
+.react-slider__ul>.active {
+    border: 1px solid #003049;
+}
+
+.react-slider__btnNext,
+.react-slider__btnPrev {
+    background-color: #003049 !important;
 }
