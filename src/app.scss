@@ -11,7 +11,8 @@
   box-sizing: border-box;
   scrollbar-width: thin;
   transition: 0.2s ease-in-out;
-  font-family: "Lexend", serif;
+  // font-family: "Lexend", serif;
+  font-family: "Montserrat", sans-serif;
   letter-spacing: 0.5px;
 }
 
@@ -20,3 +21,22 @@ html {
   background-color: #f7f7f7;
   overflow-x: hidden;
 }
+
+
+// Button Animation css starts here
+button {
+  transition: 0.3s ease-in-out !important;
+  -webkit-transition: 0.3s ease-in-out !important;
+  -moz-transition: 0.3s ease-in-out !important;
+  -ms-transition: 0.3s ease-in-out !important;
+  -o-transition: 0.3s ease-in-out !important;
+}
+
+button:active {
+  transform: matrix(0.95, 0, 0, 0.95, 0, 0) !important;
+  -webkit-transform: matrix(0.95, 0, 0, 0.95, 0, 0) !important;
+  -moz-transform: matrix(0.95, 0, 0, 0.95, 0, 0) !important;
+  -ms-transform: matrix(0.95, 0, 0, 0.95, 0, 0) !important;
+  -o-transform: matrix(0.95, 0, 0, 0.95, 0, 0) !important;
+}
+// Button Animation css ends here

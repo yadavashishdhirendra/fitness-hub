@@ -5,6 +5,9 @@ import { Button } from '@mui/material';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import Marquee from 'react-fast-marquee';
 import Header from '../Components/Header';
+import { ArrowForwardSharp } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
+import EmailIcon from '../Assets/Icon/email.png'
 
 const CAROUSEL_ARR = [
     {
@@ -72,7 +75,7 @@ const PRODUCTS_OFFER_ARR = [
     },
 ]
 
-const PRODUCTS_ARR = [
+export const PRODUCTS_ARR = [
     {
         id: 1,
         percentage_off: "7% Off",
@@ -117,10 +120,38 @@ const PRODUCTS_ARR = [
         new_price: "625",
         old_price: "749",
         product_uri: require('../Assets/Home/products/prd_3577745-MuscleBlaze-Biozyme-Performance-Whey-4.webp')
+    },
+    {
+        id: 6,
+        percentage_off: "36% Off",
+        product_name: "MuscleBlaze Pre Workout WrathX 0.75 lb Cola Frost & Creatine...",
+        wght: "",
+        new_price: "1,749",
+        old_price: "2,748",
+        product_uri: require('../Assets/Home/products/prd_3251359-MuscleBlaze-Super-Gainer-XXL-Weight-Gainer-6.webp')
+    },
+    {
+        id: 7,
+        percentage_off: "30% Off",
+        product_name: "Biozyme 5 in 1 Multivitamin,",
+        wght: "90 tablet(s) Unflavoured",
+        new_price: "899",
+        old_price: "1,299",
+        product_uri: require('../Assets/Home/products/prd_3542923-MuscleBlaze-Biozyme-5-in-1-Multivitamin-90-tablets-Unflavoured_c_m.webp')
+    },
+    {
+        id: 8,
+        percentage_off: "16% Off",
+        product_name: "High Protein Peanut Butter",
+        wght: "1 Kg Dark Chocolate Creamy",
+        new_price: "625",
+        old_price: "749",
+        product_uri: require('../Assets/Home/products/prd_3577745-MuscleBlaze-Biozyme-Performance-Whey-4.webp')
     }
 ]
 
 const Home = () => {
+    const navigate = useNavigate();
     const [activeIndex, setActiveIndex] = useState(0)
     return (
         <Fragment>
@@ -208,14 +239,26 @@ const Home = () => {
                         ))
                     }
                 </div>
+
+                <div className='all__products'>
+                    <Button onClick={() => navigate('/products')}>View all Products &nbsp; <ArrowForwardSharp /></Button>
+                </div>
                 {/* products container ends here */}
-
-
-                {/* Gallery Component starts here */}
-                <div></div>
-                {/* Gallery Component ends here */}
-
             </div>
+
+            {/* Sign Up Component starts here */}
+            <div className='sign__up__container'>
+                <img src={EmailIcon} alt="" />
+                <h2>70% Off all Whey <br /> Protein products for the next <br /> 02 day only
+                </h2>
+                <p>Be the first to know about our new arrivals ands exclusive offers.</p>
+
+                <div>
+                    <input type="text" />
+                    <Button>Subscribe</Button>
+                </div>
+            </div>
+            {/* Sign Up Component ends here */}
         </Fragment>
     )
 }
