@@ -90,7 +90,7 @@
     max-width: 600px;
     position: relative;
     overflow: hidden;
-    height: 190px;
+    height: 250px;
     /* Set a fixed height for smooth animation */
 }
 
@@ -105,14 +105,14 @@
 
 /* Text Styling */
 .banner-text {
-    font-size: 42px;
-    font-weight: 800;
+    font-size: 48px;
+    font-weight: 700;
     color: white;
     position: absolute;
     width: 100%;
     text-align: left;
     opacity: 0;
-    font-family: "Merienda", serif;
+    font-family: "Montserrat";
     transform: translateY(-100%);
     animation: slideDown 0.5s ease-in-out forwards;
 
@@ -127,7 +127,7 @@
     backdrop-filter: blur(30px);
     border-radius: 2px !important;
     padding: 10px 35px !important;
-    font-family: "Merienda", serif !important;
+    font-family: "Montserrat" !important;
     color: #003049 !important;
     font-weight: 700 !important;
     margin-top: 20px !important;

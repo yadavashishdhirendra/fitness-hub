@@ -13,17 +13,93 @@
                     }
                 }
             }
-
-            >img {
-                width: 150px !important;
-                mix-blend-mode: lighten !important;
-            }
         }
 
         // }
     }
 }
 
+.left__row__header {
+    @include flex($justify: space-between);
+    width: 100%;
+
+    @include for_breakpoint(mobile){
+        flex-direction: column;
+    }
+
+    >div {
+        // display: flex !important;
+
+        &:nth-child(1) {
+            flex: 0.155;
+
+            @include for_breakpoint(LargeTablet) {
+                flex: 0.5;
+            }
+
+            @include for_breakpoint(tablet) {
+                flex: 1;
+            }
+        }
+
+        &:nth-child(2) {
+            flex: 1;
+        }
+
+        >img {
+            width: 150px !important;
+            mix-blend-mode: lighten !important;
+        }
+    }
+}
+
 .cart__icon {
+    position: relative;
+    top: 0;
     min-width: 20px !important;
+
+    @include for_breakpoint(mobile) {
+        display: none !important;
+    }
+
+    >.cart__count {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #fff;
+        width: 20px;
+        height: 20px;
+        border-radius: 50px;
+        font-size: 12px;
+        font-weight: 700;
+        color: #223049;
+    }
+}
+
+.menu__container {
+    >ul {
+        @include flex($gap: 40px);
+        list-style: none;
+
+        @include for_breakpoint(tablet) {
+            display: none;
+        }
+
+        >li {
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}
+
+.active__menu {
+    list-style: square;
+}
+
+@media screen and (max-width: 598px) {
+    .css-1orzy9s{
+        display: none !important;
+    }
 }

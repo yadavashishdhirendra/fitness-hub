@@ -6,6 +6,21 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import Logo from '../Assets/Icon/logo__arfanutrition.png'
 import { ShoppingBagIcon } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+
+const Headers = [{
+    id: 1,
+    name: "Home",
+    uri: '/',
+}, {
+    id: 2,
+    name: "Our Products",
+    uri: '/products',
+}, {
+    id: 3,
+    name: "My Profile",
+    uri: "/profile",
+}]
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -51,6 +66,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Header = () => {
+    const location = useLocation();
+
+    console.log(location.pathname)
     return (
         <Fragment>
             <AppBar className='header__wrapper' position="fixed">
@@ -64,16 +82,37 @@ const Header = () => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-                    >
-                        <img src={Logo} alt="" />
-                    </Typography>
+                    <div className='left__row__header'>
+
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                        >
+                            <img src={Logo} alt="" />
+                        </Typography>
+
+                        {/* Menu Component starts here */}
+                        <div className='menu__container'>
+                            <ul>
+                                {
+                                    Headers?.map((i, index) => (
+                                        <li key={index} className={location.pathname === i.uri ? 'active__menu' : ''}>
+                                            <Link to={`${i.uri}`}>{i.name}</Link>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                        {/* Menu Component ends here */}
+                    </div>
+
                     <Button className='cart__icon'>
                         <ShoppingBagIcon size={24} color='white' />
+                        <div className='cart__count'>
+                            3
+                        </div>
                     </Button>
                     <Search>
                         <SearchIconWrapper>
