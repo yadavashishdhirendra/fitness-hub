@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import Marquee from 'react-fast-marquee'
 import Header from '../Components/Header'
 import '../Styles/Home.scss'
@@ -18,7 +18,6 @@ import {
     TableContainer,
     TableHead,
     TableRow,
-    Paper,
     IconButton,
     Box,
 } from "@mui/material";
@@ -47,6 +46,8 @@ const Cart = () => {
     const navigate = useNavigate();
     const [products, setProducts] = useState(initialProducts);
 
+    const [total, setTotal] = useState(null)
+
     const updateQuantity = (id, change) => {
         setProducts((prevProducts) =>
             prevProducts.map((product) =>
@@ -60,6 +61,14 @@ const Cart = () => {
     const removeProduct = (id) => {
         setProducts((prevProducts) => prevProducts.filter((product) => product.id !== id));
     };
+
+    console.log("PRODUCTS: ", products)
+
+    useEffect(() => {
+        const totalSum = products.reduce((acc, item) => acc + item.price * item.quantity, 0);
+        setTotal(totalSum.toFixed(2));
+    }, [products]);
+
     return (
         <Fragment>
             {/* Marquee Container starts here */}
@@ -108,7 +117,7 @@ const Cart = () => {
 
                 {/* Prdoducts component starts here */}
                 <Box sx={{ width: "100%", overflowX: "auto", p: 2 }}>
-                    <TableContainer component={Paper}>
+                    <TableContainer className='table__container'>
                         <Table sx={{ minWidth: 500 }} aria-label="shopping cart table">
                             <TableHead>
                                 <TableRow>
@@ -130,7 +139,7 @@ const Cart = () => {
                                                     style={{ width: 56, height: 56, marginRight: 16 }}
                                                 />
                                                 <Box>
-                                                    <Typography fontFamily={'Montserrat'} fontWeight="bold" mb={0.5}>{product.name}</Typography>
+                                                    <Typography fontFamily={'Montserrat'} fontWeight="bold" mb={0.5}><Link className='remove__anchor' to={`/products/${product.id}/${product.name}`}>{product.name}</Link></Typography>
                                                     <Typography fontFamily={'Montserrat'} fontWeight="400" fontSize={14}>${product.price}</Typography>
                                                 </Box>
                                             </Box>
@@ -157,6 +166,13 @@ const Cart = () => {
                         </Table>
                     </TableContainer>
                 </Box>
+
+                <div className='subtotal__checkout'>
+                    <h4>Subtotal: ${total}</h4>
+                    <div className='all__products'>
+                        <Button onClick={() => navigate('/cart')}>Checkout &nbsp; <ArrowForwardSharp /></Button>
+                    </div>
+                </div>
                 {/* Products component ends here */}
 
             </div>

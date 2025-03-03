@@ -21,3 +21,32 @@
         }
     }
 }
+
+.subtotal__checkout {
+    >.all__products {
+        margin-top: -10px !important;
+
+        >button {
+            width: 80px !important;
+            background-color: #003049 !important;
+            color: white !important;
+        }
+    }
+}
+
+.subtotal__checkout {
+    @include flex(column, flex-start, flex-start);
+    margin-top: 40px;
+    padding-left: 20px;
+}
+
+.table__container {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+    background-color: white !important;
+    border-radius: 8px !important;
+}
+
+.remove__anchor{
+    text-decoration: none !important;
+    color: #003049;
+}
