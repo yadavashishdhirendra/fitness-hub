@@ -39,4 +39,15 @@ button:active {
   -ms-transform: matrix(0.95, 0, 0, 0.95, 0, 0) !important;
   -o-transform: matrix(0.95, 0, 0, 0.95, 0, 0) !important;
 }
+
 // Button Animation css ends here
+
+.loading__container {
+  @include flex();
+  height: 100vh;
+
+  >img {
+    width: 240px;
+    mix-blend-mode: darken;
+  }
+}

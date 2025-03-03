@@ -1,0 +1,23 @@
+@import '../mixin';
+
+.container {
+    >.cart__heading {
+        border-bottom: 1px solid rgba(0, 48, 73, 0.07) !important;
+        @include flex($justify: space-between);
+        margin-top: 0px;
+
+        @include for_breakpoint(mobile) {
+            @include flex(column, flex-start);
+            margin-top: 30px;
+        }
+
+        >.all__products {
+            margin-top: -20px !important;
+            margin-bottom: 25px;
+        }
+
+        >h1 {
+            font-size: 32px;
+        }
+    }
+}

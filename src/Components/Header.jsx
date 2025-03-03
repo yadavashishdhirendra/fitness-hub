@@ -6,7 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import Logo from '../Assets/Icon/logo__arfanutrition.png'
 import { ShoppingBagIcon } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Headers = [{
     id: 1,
@@ -68,7 +68,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const Header = () => {
     const location = useLocation();
 
-    console.log(location.pathname)
+    const navigate = useNavigate();
+
     return (
         <Fragment>
             <AppBar className='header__wrapper' position="fixed">
@@ -108,7 +109,7 @@ const Header = () => {
                         {/* Menu Component ends here */}
                     </div>
 
-                    <Button className='cart__icon'>
+                    <Button onClick={() => navigate('/cart')} className='cart__icon'>
                         <ShoppingBagIcon size={24} color='white' />
                         <div className='cart__count'>
                             3
