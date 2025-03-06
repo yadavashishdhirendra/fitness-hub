@@ -67,72 +67,54 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const Header = () => {
     const location = useLocation();
-
-    const [role, setRole] = useState("admin")
-
     const navigate = useNavigate();
 
+    // Fetch role from localStorage
+    const [role] = useState(localStorage.getItem("gym__user"));
+
+    const isAdminRoute = location.pathname.startsWith("/admin");
     return (
         <Fragment>
-            <AppBar className='header__wrapper' style={{ top: role === "admin" ? "0px" : "36px" }} position="fixed">
+            <AppBar className={`header__wrapper ${isAdminRoute ? "admin__header" : "user__header"}`} position="fixed">
                 <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="open drawer"
-                        sx={{ mr: 2 }}
-                    >
+                    <IconButton size="large" edge="start" color="inherit" aria-label="open drawer" sx={{ mr: 2 }}>
                         <MenuIcon />
                     </IconButton>
                     <div className='left__row__header'>
-
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="div"
-                            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-                        >
+                        <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
                             <Link to={'/'}><img src={Logo} alt="Logo" /></Link>
                         </Typography>
 
-                        {
-                            role === "user" &&
+                        {role === "User" && (
                             <div className='menu__container'>
                                 <ul>
-                                    {
-                                        Headers?.map((i, index) => (
-                                            <li key={index} className={location.pathname === i.uri ? 'active__menu' : ''}>
-                                                <Link to={`${i.uri}`}>{i.name}</Link>
-                                            </li>
-                                        ))
-                                    }
+                                    {Headers.map((i) => (
+                                        <li key={i.id} className={location.pathname === i.uri ? 'active__menu' : ''}>
+                                            <Link to={i.uri}>{i.name}</Link>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
-                        }
+                        )}
                     </div>
 
-                    {
-                        role === "user" && <Button onClick={() => navigate('/cart')} className='cart__icon'>
+                    {role === "User" && (
+                        <Button onClick={() => navigate('/cart')} className='cart__icon'>
                             <ShoppingBagIcon size={24} color='white' />
-                            <div className='cart__count'>
-                                3
-                            </div>
+                            <div className='cart__count'>3</div>
                         </Button>
-                    }
+                    )}
+
                     <Search>
                         <SearchIconWrapper>
                             <SearchIcon />
                         </SearchIconWrapper>
-                        <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
+                        <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }} />
                     </Search>
                 </Toolbar>
             </AppBar>
         </Fragment>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;

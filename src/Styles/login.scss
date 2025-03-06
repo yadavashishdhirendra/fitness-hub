@@ -1,0 +1,6 @@
+@import '../mixin';
+
+.login__container {
+    @include flex();
+    height: 100vh;
+}
