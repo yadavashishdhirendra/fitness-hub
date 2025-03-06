@@ -1,5 +1,5 @@
 .header__wrapper {
-    top: 36px !important;
+    // top: 36px !important;
     background-color: #223049 !important;
 
     >div {
@@ -23,7 +23,7 @@
     @include flex($justify: space-between);
     width: 100%;
 
-    @include for_breakpoint(mobile){
+    @include for_breakpoint(mobile) {
         flex-direction: column;
     }
 
@@ -46,9 +46,13 @@
             flex: 1;
         }
 
-        >img {
-            width: 150px !important;
-            mix-blend-mode: lighten !important;
+        a {
+            text-decoration: none;
+
+            >img {
+                width: 150px !important;
+                mix-blend-mode: lighten !important;
+            }
         }
     }
 }
@@ -99,7 +103,7 @@
 }
 
 @media screen and (max-width: 598px) {
-    .css-1orzy9s{
+    .css-1orzy9s {
         display: none !important;
     }
 }

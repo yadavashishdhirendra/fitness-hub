@@ -1,6 +1,6 @@
 import { AppBar, Button, IconButton, Toolbar, Typography } from '@mui/material'
 import { styled, alpha } from '@mui/material/styles';
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
@@ -68,11 +68,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const Header = () => {
     const location = useLocation();
 
+    const [role, setRole] = useState("admin")
+
     const navigate = useNavigate();
 
     return (
         <Fragment>
-            <AppBar className='header__wrapper' position="fixed">
+            <AppBar className='header__wrapper' style={{ top: role === "admin" ? "0px" : "36px" }} position="fixed">
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -91,30 +93,33 @@ const Header = () => {
                             component="div"
                             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                         >
-                            <img src={Logo} alt="" />
+                            <Link to={'/'}><img src={Logo} alt="Logo" /></Link>
                         </Typography>
 
-                        {/* Menu Component starts here */}
-                        <div className='menu__container'>
-                            <ul>
-                                {
-                                    Headers?.map((i, index) => (
-                                        <li key={index} className={location.pathname === i.uri ? 'active__menu' : ''}>
-                                            <Link to={`${i.uri}`}>{i.name}</Link>
-                                        </li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
-                        {/* Menu Component ends here */}
+                        {
+                            role === "user" &&
+                            <div className='menu__container'>
+                                <ul>
+                                    {
+                                        Headers?.map((i, index) => (
+                                            <li key={index} className={location.pathname === i.uri ? 'active__menu' : ''}>
+                                                <Link to={`${i.uri}`}>{i.name}</Link>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                        }
                     </div>
 
-                    <Button onClick={() => navigate('/cart')} className='cart__icon'>
-                        <ShoppingBagIcon size={24} color='white' />
-                        <div className='cart__count'>
-                            3
-                        </div>
-                    </Button>
+                    {
+                        role === "user" && <Button onClick={() => navigate('/cart')} className='cart__icon'>
+                            <ShoppingBagIcon size={24} color='white' />
+                            <div className='cart__count'>
+                                3
+                            </div>
+                        </Button>
+                    }
                     <Search>
                         <SearchIconWrapper>
                             <SearchIcon />

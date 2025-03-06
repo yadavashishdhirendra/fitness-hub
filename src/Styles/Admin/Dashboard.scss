@@ -1,0 +1,10 @@
+@import '../../mixin';
+
+.gym__dashboard__container__row {
+    @include grid(250px 1fr);
+
+    >div {
+        border: 1px solid black;
+        height: 50px;
+    }
+}

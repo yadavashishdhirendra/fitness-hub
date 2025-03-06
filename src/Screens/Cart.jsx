@@ -24,6 +24,7 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import MetaTitle from '../Components/MetaTitle';
 
 const initialProducts = [
     {
@@ -71,6 +72,8 @@ const Cart = () => {
 
     return (
         <Fragment>
+            <MetaTitle title={`My Cart`} />
+
             {/* Marquee Container starts here */}
             <div className='marquee__container__row'>
                 <Marquee>

@@ -13,6 +13,7 @@ import SliderImage from "react-zoom-slider";
 import { ArrowForwardSharp } from '@mui/icons-material';
 import { PRODUCTS_ARR } from './Home';
 import { Button } from '@mui/material';
+import MetaTitle from '../Components/MetaTitle';
 
 const CAROUSEL_ARR = [
     {
@@ -34,6 +35,8 @@ const ProductDetails = () => {
     const { id, name } = useParams();
     return (
         <Fragment>
+            <MetaTitle title={`${name}`} />
+
             {/* Marquee Container starts here */}
             <div className='marquee__container__row'>
                 <Marquee>

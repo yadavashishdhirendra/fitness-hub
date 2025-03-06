@@ -8,6 +8,7 @@ import Header from '../Components/Header';
 import { ArrowForwardSharp } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import EmailIcon from '../Assets/Icon/email.png'
+import MetaTitle from '../Components/MetaTitle';
 
 const CAROUSEL_ARR = [
     {
@@ -155,7 +156,8 @@ const Home = () => {
     const [activeIndex, setActiveIndex] = useState(0)
     return (
         <Fragment>
-
+            <MetaTitle title={`Fitness Hub`} />
+   
             {/* Marquee Container starts here */}
             <div className='marquee__container__row'>
                 <Marquee>

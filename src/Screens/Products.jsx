@@ -17,6 +17,7 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import HomeIcon from '@mui/icons-material/Home';
 import GrainIcon from '@mui/icons-material/Grain';
 import { ArrowForwardSharp } from '@mui/icons-material';
+import MetaTitle from '../Components/MetaTitle';
 
 const Products = () => {
     const navigate = useNavigate();
@@ -63,6 +64,7 @@ const Products = () => {
 
     return (
         <Fragment>
+            <MetaTitle title={`Our Products`} />
             {/* Marquee Container starts here */}
             <div className='marquee__container__row'>
                 <Marquee>
