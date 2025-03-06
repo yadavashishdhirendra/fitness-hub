@@ -8,6 +8,18 @@ const Dashboard = () => {
             {/* Navbar Component starts here */}
             <Header />
             {/* Navbar Component ends here */}
+
+            <div className="admin__container">
+                {/* grid component starts here */}
+                <div className="count__grid__row">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                {/* grid component ends here */}
+            </div>
         </Fragment>
     )
 }

@@ -18,11 +18,11 @@
     }
 }
 
-.admin__header{
+.admin__header {
     top: 0px !important;
 }
 
-.user__header{
+.user__header {
     top: 36px !important;
 }
 
@@ -114,3 +114,24 @@
         display: none !important;
     }
 }
+
+.menu__dropdown__pro {
+    div {
+        &:nth-child(3) {
+            ul {
+                >li {
+                    font-family: "Montserrat" !important;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+.MuiAvatar-circular{
+    font-family: 'Merienda' !important;
+}
+
+.MuiTooltip-tooltip{
+    font-family: 'Montserrat' !important;
+  }
