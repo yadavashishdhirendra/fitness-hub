@@ -9,6 +9,11 @@ import { ArrowForwardSharp } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import EmailIcon from '../Assets/Icon/email.png'
 import MetaTitle from '../Components/MetaTitle';
+import safeIcon from '../Assets/Home/safeandsecure.svg'
+import FreeShippingIcon from '../Assets/Home/freeshiping.svg'
+import AuthencityIcon from '../Assets/Home/authen.svg'
+import TimeIcon from '../Assets/Home/time.png'
+import Footer from '../Components/Footer';
 
 const CAROUSEL_ARR = [
     {
@@ -84,7 +89,7 @@ export const PRODUCTS_ARR = [
         wght: "4.4 lb Choco Crispers",
         new_price: "5,099",
         old_price: "5,499",
-        product_uri: require('../Assets/Home/products/pck_3568539_c_m.webp')
+        product_uri: require('../Assets/Home/products/WhatsApp Image 2025-05-21 at 10.16.07 PM.jpeg')
     },
     {
         id: 2,
@@ -93,7 +98,7 @@ export const PRODUCTS_ARR = [
         wght: "6.6 lb Chocolate",
         new_price: "2,749",
         old_price: "4,299",
-        product_uri: require('../Assets/Home/products/prd_2989517-MuscleBlaze-High-Protein-Peanut-Butter-1-kg-Dark-Chocolate-Creamy_c_m.webp')
+        product_uri: require('../Assets/Home/products/WhatsApp Image 2025-05-21 at 10.16.07 PM (1).jpeg')
     },
     {
         id: 3,
@@ -102,53 +107,53 @@ export const PRODUCTS_ARR = [
         wght: "",
         new_price: "1,749",
         old_price: "2,748",
-        product_uri: require('../Assets/Home/products/prd_3251359-MuscleBlaze-Super-Gainer-XXL-Weight-Gainer-6.webp')
+        product_uri: require('../Assets/Home/products/WhatsApp Image 2025-05-21 at 10.16.08 PM.jpeg')
     },
-    {
-        id: 4,
-        percentage_off: "30% Off",
-        product_name: "Biozyme 5 in 1 Multivitamin,",
-        wght: "90 tablet(s) Unflavoured",
-        new_price: "899",
-        old_price: "1,299",
-        product_uri: require('../Assets/Home/products/prd_3542923-MuscleBlaze-Biozyme-5-in-1-Multivitamin-90-tablets-Unflavoured_c_m.webp')
-    },
-    {
-        id: 5,
-        percentage_off: "16% Off",
-        product_name: "High Protein Peanut Butter",
-        wght: "1 Kg Dark Chocolate Creamy",
-        new_price: "625",
-        old_price: "749",
-        product_uri: require('../Assets/Home/products/prd_3577745-MuscleBlaze-Biozyme-Performance-Whey-4.webp')
-    },
-    {
-        id: 6,
-        percentage_off: "36% Off",
-        product_name: "MuscleBlaze Pre Workout WrathX 0.75 lb Cola Frost & Creatine...",
-        wght: "",
-        new_price: "1,749",
-        old_price: "2,748",
-        product_uri: require('../Assets/Home/products/prd_3251359-MuscleBlaze-Super-Gainer-XXL-Weight-Gainer-6.webp')
-    },
-    {
-        id: 7,
-        percentage_off: "30% Off",
-        product_name: "Biozyme 5 in 1 Multivitamin,",
-        wght: "90 tablet(s) Unflavoured",
-        new_price: "899",
-        old_price: "1,299",
-        product_uri: require('../Assets/Home/products/prd_3542923-MuscleBlaze-Biozyme-5-in-1-Multivitamin-90-tablets-Unflavoured_c_m.webp')
-    },
-    {
-        id: 8,
-        percentage_off: "16% Off",
-        product_name: "High Protein Peanut Butter",
-        wght: "1 Kg Dark Chocolate Creamy",
-        new_price: "625",
-        old_price: "749",
-        product_uri: require('../Assets/Home/products/prd_3577745-MuscleBlaze-Biozyme-Performance-Whey-4.webp')
-    }
+    //     {
+    //         id: 4,
+    //         percentage_off: "30% Off",
+    //         product_name: "Biozyme 5 in 1 Multivitamin,",
+    //         wght: "90 tablet(s) Unflavoured",
+    //         new_price: "899",
+    //         old_price: "1,299",
+    //         product_uri: require('../Assets/Home/products/prd_3542923-MuscleBlaze-Biozyme-5-in-1-Multivitamin-90-tablets-Unflavoured_c_m.webp')
+    //     },
+    //     {
+    //         id: 5,
+    //         percentage_off: "16% Off",
+    //         product_name: "High Protein Peanut Butter",
+    //         wght: "1 Kg Dark Chocolate Creamy",
+    //         new_price: "625",
+    //         old_price: "749",
+    //         product_uri: require('../Assets/Home/products/prd_3577745-MuscleBlaze-Biozyme-Performance-Whey-4.webp')
+    //     },
+    //     {
+    //         id: 6,
+    //         percentage_off: "36% Off",
+    //         product_name: "MuscleBlaze Pre Workout WrathX 0.75 lb Cola Frost & Creatine...",
+    //         wght: "",
+    //         new_price: "1,749",
+    //         old_price: "2,748",
+    //         product_uri: require('../Assets/Home/products/prd_3251359-MuscleBlaze-Super-Gainer-XXL-Weight-Gainer-6.webp')
+    //     },
+    //     {
+    //         id: 7,
+    //         percentage_off: "30% Off",
+    //         product_name: "Biozyme 5 in 1 Multivitamin,",
+    //         wght: "90 tablet(s) Unflavoured",
+    //         new_price: "899",
+    //         old_price: "1,299",
+    //         product_uri: require('../Assets/Home/products/prd_3542923-MuscleBlaze-Biozyme-5-in-1-Multivitamin-90-tablets-Unflavoured_c_m.webp')
+    //     },
+    //     {
+    //         id: 8,
+    //         percentage_off: "16% Off",
+    //         product_name: "High Protein Peanut Butter",
+    //         wght: "1 Kg Dark Chocolate Creamy",
+    //         new_price: "625",
+    //         old_price: "749",
+    //         product_uri: require('../Assets/Home/products/prd_3577745-MuscleBlaze-Biozyme-Performance-Whey-4.webp')
+    //     }
 ]
 
 const Home = () => {
@@ -157,7 +162,7 @@ const Home = () => {
     return (
         <Fragment>
             <MetaTitle title={`Fitness Hub`} />
-   
+
             {/* Marquee Container starts here */}
             <div className='marquee__container__row'>
                 <Marquee>
@@ -261,6 +266,48 @@ const Home = () => {
                 </div>
             </div>
             {/* Sign Up Component ends here */}
+
+
+            {/* Delivery Details component starts here */}
+            {/* grid row */}
+            <div className='delivery-details-grid-row'>
+                <div>
+                    <div>
+                        <img src={safeIcon} alt="" />
+                    </div>
+                    <p>100% Safe & Secure Payments
+                    </p>
+                </div>
+                <div>
+                    <div>
+                        <img src={FreeShippingIcon} alt="" />
+                    </div>
+                    <p>Free Shipping
+                    </p>
+                </div>
+                <div>
+                    <div>
+                        <img className='time-icon' src={TimeIcon} alt="" />
+                    </div>
+                    <p>
+                        Timely Delivery
+                    </p>
+                </div>
+                <div>
+                    <div>
+                        <img src={AuthencityIcon} alt="" />
+                    </div>
+                    <p>Authenticity Guaranteed
+                    </p>
+                </div>
+            </div>
+            {/* grid row */}
+            {/* Delivery Details component ends here */}
+
+            {/* Footer Component starts here */}
+            <Footer />
+            {/* Footer Component ends here */}
+
         </Fragment>
     )
 }

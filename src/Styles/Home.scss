@@ -514,3 +514,62 @@
         border-color: transparent transparent rgba(0, 48, 73, 1) transparent;
     }
 }
+
+.products-row-content {
+    margin-top: 1.4rem;
+}
+
+.delivery-details-grid-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1280px;
+    margin: 30px auto 0px auto;
+    // padding: 40px 20px;
+
+    >div {
+        @include flex(column);
+        // background-color: white;
+        padding: 0px 60px;
+        margin: 10px 0px;
+        // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        // border-radius: 8px;
+
+        >p {
+            font-weight: 500;
+            font-size: 16px;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        >div {
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            >.time-icon {
+                width: 42px;
+            }
+        }
+    }
+}
+
+// Footer css starts here
+.footer-row {
+    background-image: url('../Assets/Home/grunge-room-interior-with-dark-scratched-walls-floor.jpg');
+    background-size: cover;
+    background-position: bottom;
+    height: 100vh;
+    position: relative;
+    top: 0;
+
+    >svg {
+        position: absolute;
+        top: 0;
+        transform: rotate(180deg);
+    }
+}
+
+// Footer css ends here

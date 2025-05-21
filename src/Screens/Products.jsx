@@ -77,21 +77,21 @@ const Products = () => {
             <Header />
             {/* Navbar Component ends here */}
 
-            <div className="container">
+            {/* <div className="container"> */}
 
-                {/* BreadCrumbs Container starts here */}
-                <Breadcrumbs aria-label="breadcrumb">
-                    <Link
-                        underline="hover"
-                        sx={{ display: 'flex', alignItems: 'center' }}
-                        color="inherit"
-                        to="/"
-                        className='previous'
-                    >
-                        <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-                        Home
-                    </Link>
-                    {/* <Link
+            {/* BreadCrumbs Container starts here */}
+            <Breadcrumbs aria-label="breadcrumb">
+                <Link
+                    underline="hover"
+                    sx={{ display: 'flex', alignItems: 'center' }}
+                    color="inherit"
+                    to="/"
+                    className='previous'
+                >
+                    <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                    Home
+                </Link>
+                {/* <Link
                         underline="hover"
                         sx={{ display: 'flex', alignItems: 'center' }}
                         color="inherit"
@@ -100,46 +100,47 @@ const Products = () => {
                         <WhatshotIcon sx={{ mr: 0.5 }} fontSize="inherit" />
                         Core
                     </Link> */}
-                    <Typography
-                        fontFamily={'Montserrat'}
-                        sx={{ color: 'text.primary', display: 'flex', alignItems: 'center' }}
-                    >
-                        <GrainIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-                        Our Products
-                    </Typography>
-                </Breadcrumbs>
-                {/* BreadCrumbs Container ends here */}
+                <Typography
+                    fontFamily={'Montserrat'}
+                    sx={{ color: 'text.primary', display: 'flex', alignItems: 'center' }}
+                >
+                    <GrainIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                    Our Products
+                </Typography>
+            </Breadcrumbs>
+            {/* BreadCrumbs Container ends here */}
 
-                <div className="banner-container">
-                    {/* Overlay */}
-                    <div className="banner-overlay">
-                        <div className="text-box">
-                            <div className="text-wrapper">
-                                <h1 key={currentIndex} className="banner-text">
-                                    {textSlides[currentIndex].split("\n").map((line, index) => (
-                                        <Fragment key={index}>
-                                            {line}
-                                            <br />
-                                        </Fragment>
-                                    ))}
-                                    <Button className='button__shop__now'>Shop Now&nbsp; <ArrowForwardSharp /></Button>
-                                </h1>
+            <div className="banner-container">
+                {/* Overlay */}
+                <div className="banner-overlay">
+                    <div className="text-box">
+                        <div className="text-wrapper">
+                            <h1 key={currentIndex} className="banner-text">
+                                {textSlides[currentIndex].split("\n").map((line, index) => (
+                                    <Fragment key={index}>
+                                        {line}
+                                        <br />
+                                    </Fragment>
+                                ))}
+                                <Button className='button__shop__now'>Shop Now&nbsp; <ArrowForwardSharp /></Button>
+                            </h1>
 
-                            </div>
                         </div>
                     </div>
-
-                    {/* Navigation Arrows */}
-                    <button onClick={prevText} className="arrow-button left-arrow">
-                        <ChevronLeft size={24} />
-                    </button>
-                    <button onClick={nextText} className="arrow-button right-arrow">
-                        <ChevronRight size={24} />
-                    </button>
                 </div>
 
+                {/* Navigation Arrows */}
+                <button onClick={prevText} className="arrow-button left-arrow">
+                    <ChevronLeft size={24} />
+                </button>
+                <button onClick={nextText} className="arrow-button right-arrow">
+                    <ChevronRight size={24} />
+                </button>
+            </div>
 
-                {/* Products Container Component starts here */}
+
+            {/* Products Container Component starts here */}
+            <div className="container products-row-content">
                 <div className='products__container__row'>
                     <div>
                         <h2>FILTER:</h2>
@@ -228,9 +229,10 @@ const Products = () => {
 
                     </div>
                 </div>
-                {/* Products Container Component ends here */}
-
             </div>
+            {/* Products Container Component ends here */}
+
+            {/* </div> */}
         </Fragment>
     )
 }
