@@ -19,6 +19,8 @@
 .all__products {
     @include flex();
     margin-bottom: 40px;
+    position: relative;
+    z-index: 99;
 
     >button {
         margin-top: 30px;
@@ -369,6 +371,14 @@
     color: white;
     @include flex(column);
     text-align: center;
+    position: relative;
+    top: 0;
+
+    >svg {
+        position: absolute;
+        top: -65px;
+        // transform: rotate(180deg);
+    }
 
     >img {
         width: 52px;
@@ -561,7 +571,8 @@
     background-image: url('../Assets/Home/grunge-room-interior-with-dark-scratched-walls-floor.jpg');
     background-size: cover;
     background-position: bottom;
-    height: 100vh;
+    background-attachment: fixed;
+    height: 60vh;
     position: relative;
     top: 0;
 
