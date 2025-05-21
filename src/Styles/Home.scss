@@ -377,7 +377,15 @@
     >svg {
         position: absolute;
         top: -65px;
+
         // transform: rotate(180deg);
+        @include for_breakpoint(tablet) {
+            top: -30px;
+        }
+
+        @include for_breakpoint(mobile) {
+            top: -5px;
+        }
     }
 
     >img {
@@ -537,13 +545,22 @@
     margin: 30px auto 0px auto;
     // padding: 40px 20px;
 
+    @include for_breakpoint(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
     >div {
         @include flex(column);
         // background-color: white;
         padding: 0px 60px;
         margin: 10px 0px;
+
         // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         // border-radius: 8px;
+        @include for_breakpoint(mobile) {
+            padding: 0px 10px;
+        }
 
         >p {
             font-weight: 500;
@@ -580,6 +597,10 @@
         position: absolute;
         top: 0;
         transform: rotate(180deg);
+
+        @include for_breakpoint(tablet) {
+            top: -10px;
+        }
     }
 }
 
