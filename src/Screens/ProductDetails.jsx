@@ -115,16 +115,19 @@ const ProductDetails = () => {
 
                         <div className='product_count'>
                             <div>
-                                <Button onClick={() => setCount(count + 1)}>
-                                    <PlusIcon />
+                                <Button onClick={() => {
+                                    if (count === 0) return
+                                    else setCount(count - 1)
+                                }}>
+                                    <MinusIcon />
                                 </Button>
                             </div>
                             <div>
                                 <input type="text" value={count} onChange={(e) => setCount(e.target.value)} />
                             </div>
                             <div>
-                                <Button onClick={() => setCount(count - 1)}>
-                                    <MinusIcon />
+                                <Button onClick={() => setCount(count + 1)}>
+                                    <PlusIcon />
                                 </Button>
                             </div>
                         </div>
