@@ -9,11 +9,14 @@
     z-index: 9999;
     backdrop-filter: blur(30px);
 
-    .rfm-child {
+    .rfm-child,
+    .rfm-marquee-container:active div,
+    .rfm-marquee {
         font-family: "Merienda", serif;
         font-size: 12px !important;
         letter-spacing: 0.5px;
     }
+
 }
 
 .all__products {
@@ -245,6 +248,7 @@
         >h2 {
             text-align: center;
             font-size: 32px;
+            color: white
         }
     }
 
@@ -268,7 +272,8 @@
             position: relative;
             top: 0;
             padding: 20px 15px;
-            background-color: white;
+            background-color: rgba(0, 0, 0, 0.35);
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
             @include flex(column, flex-start);
             cursor: pointer;
             border: 1px solid rgba(0, 0, 0, 0.10);
@@ -312,6 +317,7 @@
                     margin-top: 10px;
                     font-weight: 300;
                     height: 65px;
+                    color: white;
 
                     @include for_breakpoint(mobile) {
                         font-size: 14px;
@@ -321,6 +327,7 @@
 
                 >p {
                     margin-top: 10px;
+                    color: white;
 
                     &:nth-child(1) {
                         margin-top: 10px;
@@ -567,6 +574,7 @@
             font-size: 16px;
             margin-top: 8px;
             text-align: center;
+            color: white;
         }
 
         >div {
@@ -575,6 +583,11 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+
+            >img {
+                mix-blend-mode: plus-lighter;
+                filter: contrast(0.5) !important;
+            }
 
             >.time-icon {
                 width: 42px;
@@ -607,8 +620,8 @@
 
 // Footer css ends here
 
-.bg__container {
-    background-image: url('../Assets/Home/black-electronics-s-3-smoke-opt.png');
-    width: 100%;
-    background-size: cover;
-}
+// .bg__container {
+//     background-image: url('../Assets/Home/black-electronics-s-3-smoke-opt.png');
+//     width: 100%;
+//     background-size: cover;
+// }

@@ -228,6 +228,7 @@
     >div {
         // border: 1px solid black;
         height: auto;
+        color: white;
 
         &:nth-child(2) {
             >.desc-reviews-tab-grid-row {
@@ -281,6 +282,7 @@
     >h2 {
         margin-bottom: 30px;
         font-size: 32px;
+        color: white;
     }
 }
 
@@ -290,7 +292,7 @@
 
 .react-slider__btnNext,
 .react-slider__btnPrev {
-    background-color: #212121 !important;
+    // background-color: #212121 !important;
 }
 
 .tabs {
@@ -302,6 +304,7 @@
                 >button {
                     font-family: 'Montserrat' !important;
                     font-weight: 600 !important;
+                    color: white;
                 }
             }
         }
@@ -320,11 +323,12 @@
         font-size: 22px;
         font-weight: 500;
         margin: 20px 0px 10px 0px;
+        color: white;
     }
 
     >p {
         font-size: 16px;
-        color: #212121;
+        color: white;
         margin-bottom: 10px;
         margin-top: 5px;
         line-height: 1.3195;
@@ -356,10 +360,11 @@
             }
 
             .review__input__row {
-                >.rating_container{
+                >.rating_container {
                     margin-top: 20px;
                     margin-bottom: 20px;
                 }
+
                 >textarea {
                     width: 100%;
                     border: 1px solid rgba(0, 0, 0, 0.05);
@@ -377,6 +382,9 @@
 
                     >button {
                         background-color: #212121 !important;
+                        border: none;
+                        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                        cursor: pointer;
                         width: 160px;
                         height: 44px;
                         border-radius: 50px;
@@ -393,6 +401,20 @@
             >h3 {
                 font-weight: 600;
                 font-size: 20px;
+            }
+        }
+    }
+}
+
+.MuiBreadcrumbs-separator {
+    color: white !important;
+}
+
+.MuiBreadcrumbs-ol {
+    >li {
+        &:last-child {
+            >p{
+                color: white;
             }
         }
     }
