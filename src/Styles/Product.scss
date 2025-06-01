@@ -18,6 +18,7 @@
         >h2 {
             font-size: 24px;
             margin-bottom: 15px;
+            color: white;
         }
 
         >div {
@@ -413,9 +414,15 @@
 .MuiBreadcrumbs-ol {
     >li {
         &:last-child {
-            >p{
+            >p {
                 color: white;
             }
         }
     }
+}
+
+.accordion {
+    background-color: rgba(0, 0, 0, 0.15) !important;
+    color: white !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
 }

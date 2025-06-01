@@ -165,11 +165,11 @@ const Home = () => {
             <MetaTitle title={`Fitness Hub`} />
 
             {/* Marquee Container starts here */}
-            <div className='marquee__container__row'>
+            {/* <div className='marquee__container__row'>
                 <Marquee>
                     💪🔥 Get 50% OFF on Gym Memberships! Limited Period Offer – Buy 1-Year Membership & Get 2 Months FREE! 🏋️‍♂️🎁 Hurry, Join Now! ⏳
                 </Marquee>
-            </div>
+            </div> */}
             {/* Marquee Container ends here */}
 
             {/* Navbar Component starts here */}

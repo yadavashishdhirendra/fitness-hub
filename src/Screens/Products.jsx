@@ -67,11 +67,11 @@ const Products = () => {
         <Fragment>
             <MetaTitle title={`Our Products`} />
             {/* Marquee Container starts here */}
-            <div className='marquee__container__row'>
+            {/* <div className='marquee__container__row'>
                 <Marquee>
                     💪🔥 Get 50% OFF on Gym Memberships! Limited Period Offer – Buy 1-Year Membership & Get 2 Months FREE! 🏋️‍♂️🎁 Hurry, Join Now! ⏳
                 </Marquee>
-            </div>
+            </div> */}
             {/* Marquee Container ends here */}
 
             {/* Navbar Component starts here */}
@@ -146,7 +146,7 @@ const Products = () => {
                     <div>
                         <h2>FILTER:</h2>
                         {/* Accordion */}
-                        <Accordion defaultExpanded>
+                        <Accordion className='accordion' defaultExpanded>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1-content"
@@ -158,7 +158,7 @@ const Products = () => {
 
                             </AccordionDetails>
                         </Accordion>
-                        <Accordion defaultExpanded>
+                        <Accordion className='accordion' defaultExpanded>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel2-content"
@@ -170,7 +170,7 @@ const Products = () => {
 
                             </AccordionDetails>
                         </Accordion>
-                        <Accordion defaultExpanded>
+                        <Accordion className='accordion' defaultExpanded>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel3-content"
