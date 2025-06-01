@@ -18,6 +18,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import GrainIcon from '@mui/icons-material/Grain';
 import { ArrowForwardSharp } from '@mui/icons-material';
 import MetaTitle from '../Components/MetaTitle';
+import Footer from '../Components/Footer';
 
 const Products = () => {
     const navigate = useNavigate();
@@ -233,6 +234,10 @@ const Products = () => {
             {/* Products Container Component ends here */}
 
             {/* </div> */}
+
+            {/* Footer Component starts here */}
+            <Footer />
+            {/* Footer Component ends here */}
         </Fragment>
     )
 }

@@ -14,6 +14,7 @@ import FreeShippingIcon from '../Assets/Home/freeshiping.svg'
 import AuthencityIcon from '../Assets/Home/authen.svg'
 import TimeIcon from '../Assets/Home/time.png'
 import Footer from '../Components/Footer';
+import Smoke from '../Assets/Home/black-electronics-s-3-smoke-opt.png'
 
 const CAROUSEL_ARR = [
     {
@@ -175,136 +176,138 @@ const Home = () => {
             <Header />
             {/* Navbar Component ends here */}
 
-            <div className="container">
-                {/* Carousel component starts here */}
-                <Carousel responsive={responsive} data={CAROUSEL_ARR} />
-                {/* Carousel component ends here */}
+            <div className='bg__container'>
+                <div className="container">
+                    {/* Carousel component starts here */}
+                    <Carousel responsive={responsive} data={CAROUSEL_ARR} />
+                    {/* Carousel component ends here */}
 
-                {/* offers component starts here */}
-                <div className='offers__container_grid_row'>
-                    {
-                        PRODUCTS_OFFER_ARR && PRODUCTS_OFFER_ARR?.map((i, index) => (
-                            <div key={i.id}>
-                                <img src={i.offer_img} alt="" />
-                                <div className="overlay__img"></div>
-                                <div>
-                                    <p>{i.offer_name}</p>
-                                    <h3>{i.offer_title}</h3>
-                                    <p style={{ color: i.color }}>{i.offer_percent}</p>
-                                    <Button>Shop Now&nbsp; <ArrowRightAltIcon /></Button>
+                    {/* offers component starts here */}
+                    <div className='offers__container_grid_row'>
+                        {
+                            PRODUCTS_OFFER_ARR && PRODUCTS_OFFER_ARR?.map((i, index) => (
+                                <div key={i.id}>
+                                    <img src={i.offer_img} alt="" />
+                                    <div className="overlay__img"></div>
+                                    <div>
+                                        <p>{i.offer_name}</p>
+                                        <h3>{i.offer_title}</h3>
+                                        <p style={{ color: i.color }}>{i.offer_percent}</p>
+                                        <Button>Shop Now&nbsp; <ArrowRightAltIcon /></Button>
+                                    </div>
                                 </div>
-                            </div>
-                        ))
-                    }
-                    <div></div>
-                </div>
-                {/* offers component ends here */}
+                            ))
+                        }
+                        <div></div>
+                    </div>
+                    {/* offers component ends here */}
 
-                {/* Our Products Header starts here */}
-                <div className='our__products__container'>
-                    <p>SHOP OUR NEW RELEASES
-                    </p>
-                    <h2>Our Products</h2>
-                </div>
-                {/* Our Products Header ends here */}
+                    {/* Our Products Header starts here */}
+                    <div className='our__products__container'>
+                        <p>SHOP OUR NEW RELEASES
+                        </p>
+                        <h2>Our Products</h2>
+                    </div>
+                    {/* Our Products Header ends here */}
 
-                {/* Shop By Category */}
-                <div className='categories__grid__row'>
-                    {
-                        CATEGORY_ARR && CATEGORY_ARR?.map((i, index) => (
-                            <div onClick={() => setActiveIndex(index)} className={`button-92 ${activeIndex === index ? "active__button" : ""}`} key={index}>
-                                <div className='traingle'></div>
-                                <p>{i}</p>
-                            </div>
-                        ))
-                    }
-                </div>
-                {/* Shop By Category */}
-
-
-                {/* Products container starts here */}
-                <div className="products__container_grid__row">
-                    {
-                        PRODUCTS_ARR && PRODUCTS_ARR?.map((i, index) => (
-                            <div key={index} onClick={() => navigate(`/products/${i.id}/${i.product_name}`)}>
-                                <div className='svg__icon'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="50.216" height="68.757" viewBox="0 0 50.216 68.757">
-                                        <path id="Group_427321710" data-name="Group 427321710" d="M35.389-5H.172V17.683s0,0,0,0V38.563c0,.483.452.918,1.146,1.1a2.653,2.653,0,0,0,2.023-.259l3.938-2.532,3.938,2.532a2.638,2.638,0,0,0,2.625,0l3.938-2.532,3.938,2.532a2.639,2.639,0,0,0,2.625,0l3.938-2.533,3.938,2.533a2.654,2.654,0,0,0,2.023.259c.694-.185,1.146-.62,1.146-1.1V-5Z" transform="translate(-0.172 5)" fill="#23a247" fill-rule="evenodd" />
-                                    </svg>
-                                    <p>20% <br /> OFF</p>
+                    {/* Shop By Category */}
+                    <div className='categories__grid__row'>
+                        {
+                            CATEGORY_ARR && CATEGORY_ARR?.map((i, index) => (
+                                <div onClick={() => setActiveIndex(index)} className={`button-92 ${activeIndex === index ? "active__button" : ""}`} key={index}>
+                                    <div className='traingle'></div>
+                                    <p>{i}</p>
                                 </div>
-                                <img src={i.product_uri} alt="" />
-                                <div>
-                                    <h3>{i.product_name}</h3>
-                                    <p>{i.wght}</p>
-                                    <p>
-                                        ₹{i.new_price} <span className='old__price'>₹{i.old_price}</span>&nbsp;&nbsp; <span className='save__price'>Save ₹{i.percentage_off}</span>
-                                    </p>
+                            ))
+                        }
+                    </div>
+                    {/* Shop By Category */}
+
+
+                    {/* Products container starts here */}
+                    <div className="products__container_grid__row">
+                        {
+                            PRODUCTS_ARR && PRODUCTS_ARR?.map((i, index) => (
+                                <div key={index} onClick={() => navigate(`/products/${i.id}/${i.product_name}`)}>
+                                    <div className='svg__icon'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50.216" height="68.757" viewBox="0 0 50.216 68.757">
+                                            <path id="Group_427321710" data-name="Group 427321710" d="M35.389-5H.172V17.683s0,0,0,0V38.563c0,.483.452.918,1.146,1.1a2.653,2.653,0,0,0,2.023-.259l3.938-2.532,3.938,2.532a2.638,2.638,0,0,0,2.625,0l3.938-2.532,3.938,2.532a2.639,2.639,0,0,0,2.625,0l3.938-2.533,3.938,2.533a2.654,2.654,0,0,0,2.023.259c.694-.185,1.146-.62,1.146-1.1V-5Z" transform="translate(-0.172 5)" fill="#23a247" fill-rule="evenodd" />
+                                        </svg>
+                                        <p>20% <br /> OFF</p>
+                                    </div>
+                                    <img src={i.product_uri} alt="" />
+                                    <div>
+                                        <h3>{i.product_name}</h3>
+                                        <p>{i.wght}</p>
+                                        <p>
+                                            ₹{i.new_price} <span className='old__price'>₹{i.old_price}</span>&nbsp;&nbsp; <span className='save__price'>Save ₹{i.percentage_off}</span>
+                                        </p>
+                                    </div>
+                                    <Button>Add To Cart</Button>
                                 </div>
-                                <Button>Add To Cart</Button>
-                            </div>
-                        ))
-                    }
+                            ))
+                        }
+                    </div>
+
+                    <div className='all__products'>
+                        <Button onClick={() => navigate('/products')}>View all Products &nbsp; <ArrowForwardSharp /></Button>
+                    </div>
+                    {/* products container ends here */}
                 </div>
 
-                <div className='all__products'>
-                    <Button onClick={() => navigate('/products')}>View all Products &nbsp; <ArrowForwardSharp /></Button>
+                {/* Sign Up Component starts here */}
+                <div className='sign__up__container'>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f7f7f7" fill-opacity="1" d="M0,64L80,74.7C160,85,320,107,480,106.7C640,107,800,85,960,85.3C1120,85,1280,107,1360,117.3L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
+                    <img src={EmailIcon} alt="" />
+                    <h2>70% Off all Whey <br /> Protein products for the next <br /> 02 day only
+                    </h2>
+                    <p>Be the first to know about our new arrivals ands exclusive offers.</p>
+
+                    <div>
+                        <input type="text" />
+                        <Button>Subscribe</Button>
+                    </div>
                 </div>
-                {/* products container ends here */}
+                {/* Sign Up Component ends here */}
+
+
+                {/* Delivery Details component starts here */}
+                {/* grid row */}
+                <div className='delivery-details-grid-row'>
+                    <div>
+                        <div>
+                            <img src={safeIcon} alt="" />
+                        </div>
+                        <p>100% Safe & Secure Payments
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <img src={FreeShippingIcon} alt="" />
+                        </div>
+                        <p>Free Shipping
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <img className='time-icon' src={TimeIcon} alt="" />
+                        </div>
+                        <p>
+                            Timely Delivery
+                        </p>
+                    </div>
+                    <div>
+                        <div>
+                            <img src={AuthencityIcon} alt="" />
+                        </div>
+                        <p>Authenticity Guaranteed
+                        </p>
+                    </div>
+                </div>
+                {/* grid row */}
+                {/* Delivery Details component ends here */}
+
             </div>
-
-            {/* Sign Up Component starts here */}
-            <div className='sign__up__container'>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f7f7f7" fill-opacity="1" d="M0,64L80,74.7C160,85,320,107,480,106.7C640,107,800,85,960,85.3C1120,85,1280,107,1360,117.3L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
-                <img src={EmailIcon} alt="" />
-                <h2>70% Off all Whey <br /> Protein products for the next <br /> 02 day only
-                </h2>
-                <p>Be the first to know about our new arrivals ands exclusive offers.</p>
-
-                <div>
-                    <input type="text" />
-                    <Button>Subscribe</Button>
-                </div>
-            </div>
-            {/* Sign Up Component ends here */}
-
-
-            {/* Delivery Details component starts here */}
-            {/* grid row */}
-            <div className='delivery-details-grid-row'>
-                <div>
-                    <div>
-                        <img src={safeIcon} alt="" />
-                    </div>
-                    <p>100% Safe & Secure Payments
-                    </p>
-                </div>
-                <div>
-                    <div>
-                        <img src={FreeShippingIcon} alt="" />
-                    </div>
-                    <p>Free Shipping
-                    </p>
-                </div>
-                <div>
-                    <div>
-                        <img className='time-icon' src={TimeIcon} alt="" />
-                    </div>
-                    <p>
-                        Timely Delivery
-                    </p>
-                </div>
-                <div>
-                    <div>
-                        <img src={AuthencityIcon} alt="" />
-                    </div>
-                    <p>Authenticity Guaranteed
-                    </p>
-                </div>
-            </div>
-            {/* grid row */}
-            {/* Delivery Details component ends here */}
-
             {/* Footer Component starts here */}
             <Footer />
             {/* Footer Component ends here */}

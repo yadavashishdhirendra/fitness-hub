@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import Marquee from 'react-fast-marquee'
 import Header from '../Components/Header'
 import '../Styles/Home.scss'
@@ -14,6 +14,12 @@ import { ArrowForwardSharp } from '@mui/icons-material';
 import { PRODUCTS_ARR } from './Home';
 import { Button } from '@mui/material';
 import MetaTitle from '../Components/MetaTitle';
+import Footer from '../Components/Footer';
+import Tabs, { tabsClasses } from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import AddIcon from '@mui/icons-material/Add';
+import { MinusIcon, PlusIcon } from 'lucide-react';
+import Reviews from '../Components/Reviews';
 
 const CAROUSEL_ARR = [
     {
@@ -33,6 +39,15 @@ const CAROUSEL_ARR = [
 const ProductDetails = () => {
     const navigate = useNavigate();
     const { id, name } = useParams();
+
+    const [value, setValue] = React.useState(0);
+
+    const [count, setCount] = useState(1)
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
     return (
         <Fragment>
             <MetaTitle title={`${name}`} />
@@ -97,6 +112,67 @@ const ProductDetails = () => {
                     <div>
                         <p>#SKU-{id}</p>
                         <h1>{name}</h1>
+
+                        <div className='product_count'>
+                            <div>
+                                <Button onClick={() => setCount(count + 1)}>
+                                    <PlusIcon />
+                                </Button>
+                            </div>
+                            <div>
+                                <input type="text" value={count} onChange={(e) => setCount(e.target.value)} />
+                            </div>
+                            <div>
+                                <Button onClick={() => setCount(count - 1)}>
+                                    <MinusIcon />
+                                </Button>
+                            </div>
+                        </div>
+
+                        {/* Tabs Container */}
+                        <Tabs
+                            value={value}
+                            onChange={handleChange}
+                            variant="scrollable"
+                            scrollButtons
+                            className='tabs'
+                            aria-label="visible arrows tabs example"
+                            sx={{
+                                [`& .${tabsClasses.scrollButtons}`]: {
+                                    '&.Mui-disabled': { opacity: 0.3 },
+                                },
+                            }}
+                        >
+                            <Tab label="Description" />
+                            <Tab label="Reviews(0)" />
+                        </Tabs>
+                        {/* Tabs Container */}
+
+
+                        {/* Tab Content  */}
+                        {
+                            value === 0 ? <div className='description_content'>
+                                <p>Muscle Blast High Strength Omega 3 Fish Oil 1000 mg is a potent supplement with a combination of 1000 mg of omega-3, 180mg of EPA (eicosapentaenoic acid), and 120mg of DHA (docosahexaenoic acid), which supports good heart function.</p>
+                                <p>By adding Muscleblast High Strength Omega 3 Fish Oil 1300 mg into your daily routine, you can actively manage your cholesterol levels and maintain overall well-being.
+                                    The perfect blend of EPA and DHA in each soft gel helps promote proper heart function, supports healthy blood flow and contributes to optimal cardio vascular performance. The potent combination of omega-3 fatty acids in each soft gel helps reduce inflammation, lubricate joints, and support overall joint function.</p>
+
+                                <h3>DIRECTION OF USE:</h3>
+                                <p>1 soft gel daily or as directed by your healthcare professional.</p>
+                                <p>We always maintain our strict quality and supply chain standards to ensure the best quality products are delivered to our customers.</p>
+
+                                <h3>DECLARATION:</h3>
+                                <p>Keep the bottle tightly closed after every use</p>
+
+                                <h3>CAUTION:</h3>
+                                <p>Contains permitted natural Food Colour (172 (I))Not for Medicinal Use.</p>
+                                <p>#ALL PICTURES SHOWN ARE FOR ILLUSTRATION PURPOSE ONLY. CONTAINS NO DOPING INGREDIENTS AS PER WADA / NADA LIST</p>
+
+                                <h3>WARNING:</h3>
+                                <p>This product is not to be used by pregnant, nursing, and lactating women or by a person having any medical condition, Except when medically advised.</p>
+                            </div> : value === 1 ? <Reviews /> : null
+                        }
+                        {/* Tab Content */}
+
                     </div>
                 </div>
 
@@ -136,8 +212,10 @@ const ProductDetails = () => {
                     {/* products container ends here */}
                 </div>
                 {/* Similar Products Container ends here */}
-
             </div>
+            {/* Footer Component starts here */}
+            <Footer />
+            {/* Footer Component ends here */}
         </Fragment>
     )
 }

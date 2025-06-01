@@ -1,7 +1,7 @@
 @import '../mixin';
 
 .marquee__container__row {
-    background-color: rgba(0, 48, 73, 0.65);
+    background-color: rgba(33, 33, 33, 0.65);
     color: white;
     padding: 8px 0px;
     position: fixed;
@@ -25,14 +25,14 @@
     >button {
         margin-top: 30px;
         @include button(white, $br: 30px, $h: 48px, $w: 250px, $Fs: 16px);
-        border: 1px solid #003049;
+        border: 1px solid #212121;
         text-transform: capitalize !important;
         color: #999999 !important;
         border: 1px solid rgba(0, 48, 73, 0.25) !important;
         border-radius: 40px !important;
 
         &:hover {
-            background-color: #003049 !important;
+            background-color: #212121 !important;
             color: white !important;
         }
 
@@ -349,12 +349,12 @@
 
             >button {
                 margin-top: 15px;
-                @include button($bg: #003049, $w: 100%, $h: 44px, $br: 4px);
+                @include button($bg: #212121, $w: 100%, $h: 44px, $br: 4px);
                 font-size: 16px;
                 text-transform: uppercase !important;
 
                 @include for_breakpoint(mobile) {
-                    @include button($bg: #003049, $w: 100%, $h: 38px, $br: 4px);
+                    @include button($bg: #212121, $w: 100%, $h: 38px, $br: 4px);
                     font-size: 14px;
                 }
             }
@@ -387,6 +387,7 @@
             top: -5px;
         }
     }
+
     >img {
         width: 52px;
         margin-bottom: 20px;
@@ -432,7 +433,7 @@
         }
 
         >button {
-            background-color: #003049;
+            background-color: #212121;
             border-radius: 0px !important;
             width: 190px !important;
             height: 52px;
@@ -493,10 +494,10 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
     &:hover {
-        background-color: #003049;
+        background-color: #212121;
 
         >.traingle {
-            border-color: transparent transparent rgba(0, 48, 73, 1) transparent;
+            border-color: transparent transparent #212121 transparent;
         }
 
         >p {
@@ -521,14 +522,14 @@
 .active__button {
     --c: #fff;
     background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p, 100%)/300% no-repeat,
-        #003049;
+        #212121;
 
     >p {
         color: white;
     }
 
     >.traingle {
-        border-color: transparent transparent rgba(0, 48, 73, 1) transparent;
+        border-color: transparent transparent #212121 transparent;
     }
 }
 
@@ -587,9 +588,10 @@
     background-image: url('../Assets/Home/grunge-room-interior-with-dark-scratched-walls-floor.jpg');
     background-size: cover;
     background-position: bottom;
-    background-attachment: fixed;
-    height: 60vh;
+    // background-attachment: fixed;
+    height: auto;
     position: relative;
+    padding-bottom: 40px;
     top: 0;
 
     >svg {
@@ -604,3 +606,9 @@
 }
 
 // Footer css ends here
+
+.bg__container {
+    background-image: url('../Assets/Home/black-electronics-s-3-smoke-opt.png');
+    width: 100%;
+    background-size: cover;
+}
