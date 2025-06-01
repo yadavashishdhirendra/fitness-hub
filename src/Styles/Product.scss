@@ -63,12 +63,11 @@
     background-position: center;
     overflow: hidden;
     border-radius: 0px;
-    margin-top: 96px;
+    margin-top: 32px;
 
     @include for_breakpoint(mobile) {
         height: 450px;
         background-position: right;
-        border-radius: 12px;
     }
 }
 

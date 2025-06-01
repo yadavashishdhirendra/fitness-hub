@@ -3,10 +3,10 @@
 .footer-row {
     >.footer-grid-row {
         @include grid(400px 1fr 1fr 1fr);
-        padding-top: 12rem;
+        // padding-top: 12rem;
         max-width: 1240px;
-        margin: auto;
-        padding: 12rem 20px 1rem 20px;
+        margin: 30px auto 0 auto;
+        padding: 2rem 20px 2rem 20px;
 
         @include for_breakpoint(tablet) {
             @include grid(repeat(3, 1fr));
@@ -85,7 +85,8 @@
 
         @include for_breakpoint(tablet) {
             display: block;
-            padding: 8rem 20px 20px 20px;
+            padding: 2rem 20px 20px 20px;
+            margin-top: 30px;
         }
 
         >img {
