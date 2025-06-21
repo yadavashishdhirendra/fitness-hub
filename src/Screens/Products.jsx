@@ -1,12 +1,12 @@
 import React, { Fragment, useCallback, useEffect, useState } from 'react'
-import Marquee from 'react-fast-marquee'
+// import Marquee from 'react-fast-marquee'
 import Header from '../Components/Header'
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from '@mui/material';
 import '../Styles/Home.scss'
 import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/Product.scss'
-import { PRODUCTS_ARR } from './Home';
+import { PRODUCTS } from './Home';
 import Accordion from '@mui/material/Accordion';
 import AccordionActions from '@mui/material/AccordionActions';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -203,7 +203,7 @@ const Products = () => {
                         {/* Products container starts here */}
                         <div className="products__container_grid__row our__products" style={{ gridTemplateColumns: "repeat(3,1fr)" }}>
                             {
-                                PRODUCTS_ARR && PRODUCTS_ARR?.map((i, index) => (
+                                PRODUCTS && PRODUCTS?.map((i, index) => (
                                     <div onClick={() => navigate(`/products/${i.id}/${i.product_name}`)} key={index}>
                                         <div className='svg__icon'>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="50.216" height="68.757" viewBox="0 0 50.216 68.757">

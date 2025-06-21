@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import Marquee from 'react-fast-marquee'
+// import Marquee from 'react-fast-marquee'
 import Header from '../Components/Header'
 import '../Styles/Home.scss'
 import { Link, useNavigate, useParams } from 'react-router-dom';
@@ -11,13 +11,12 @@ import ProductIcon from '@mui/icons-material/ProductionQuantityLimitsSharp';
 import GrainIcon from '@mui/icons-material/Grain';
 import SliderImage from "react-zoom-slider";
 import { ArrowForwardSharp } from '@mui/icons-material';
-import { PRODUCTS_ARR } from './Home';
+import { PRODUCTS } from './Home';
 import { Button } from '@mui/material';
 import MetaTitle from '../Components/MetaTitle';
 import Footer from '../Components/Footer';
 import Tabs, { tabsClasses } from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import AddIcon from '@mui/icons-material/Add';
 import { MinusIcon, PlusIcon } from 'lucide-react';
 import Reviews from '../Components/Reviews';
 
@@ -187,7 +186,7 @@ const ProductDetails = () => {
                     {/* Products container starts here */}
                     <div className="products__container_grid__row">
                         {
-                            PRODUCTS_ARR && PRODUCTS_ARR?.map((i, index) => (
+                            PRODUCTS && PRODUCTS?.map((i, index) => (
                                 <div key={index} onClick={() => navigate(`/products/${i.id}/${i.product_name}`)}>
                                     <div className='svg__icon'>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="50.216" height="68.757" viewBox="0 0 50.216 68.757">

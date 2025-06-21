@@ -3,7 +3,6 @@ import '../Styles/Home.scss'
 import Carousel from '../Components/Carousel'
 import { Button } from '@mui/material';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import Marquee from 'react-fast-marquee';
 import Header from '../Components/Header';
 import { ArrowForwardSharp } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
@@ -14,20 +13,16 @@ import FreeShippingIcon from '../Assets/Home/freeshiping.svg'
 import AuthencityIcon from '../Assets/Home/authen.svg'
 import TimeIcon from '../Assets/Home/time.png'
 import Footer from '../Components/Footer';
-import Smoke from '../Assets/Home/black-electronics-s-3-smoke-opt.png'
+import Products from '../Components/Products';
 
 const CAROUSEL_ARR = [
     {
-        uri: require("../Assets/Home/bnr_3508283_o.webp"),
+        uri: require("../Assets/Home/homeBanner/young.jpg"),
+        responsive_uri: require("../Assets/Home/homeBanner/side-view-man-standing-gym.jpg")
     },
     {
-        uri: require("../Assets/Home/bnr_3593875_o.webp"),
-    },
-    {
-        uri: require("../Assets/Home/bnr_3671613_o.webp"),
-    },
-    {
-        uri: require("../Assets/Home/bnr_3671621_o.webp"),
+        uri: require("../Assets/Home/homeBanner/young-muscular-caucasian-athlete-training-gym-doing-strength-exercises-practicing-work-his.jpg"),
+        responsive_uri: require("../Assets/Home/homeBanner/workout-like-beast.jpg")
     }
 ]
 
@@ -53,7 +48,7 @@ const responsive = {
 
 //
 
-const CATEGORY_ARR = ["Beginner", "Intermediate", "Advanced"]
+const CATEGORY_ARR = ["Workout Series", "Tablets", "Protein", "Pre Workout", "Gainers", "Energy Series"]
 
 const PRODUCTS_OFFER_ARR = [
     {
@@ -82,7 +77,118 @@ const PRODUCTS_OFFER_ARR = [
     },
 ]
 
-export const PRODUCTS_ARR = [
+export const PRODUCTS = [
+    {
+        id: 1,
+        product_uri: require('../Assets/Home/HomeProducts/MARINE-COLLAGEN-300G-OR.PNG'),
+        percentage_off: "7% Off",
+        product_name: "Marine collagen 300g or",
+        wght: "4.4 lb Choco Crispers",
+        new_price: "5,099",
+        old_price: "5,499",
+    },
+    {
+        id: 3,
+        product_uri: require('../Assets/Home/HomeProducts/MULTIVITAMIN.PNG'),
+        percentage_off: "7% Off",
+        product_name: "Multivitamin",
+        wght: "4.4 lb Choco Crispers",
+        new_price: "5,099",
+        old_price: "5,499",
+    },
+    {
+        id: 5,
+        product_uri: require('../Assets/Home/HomeProducts/OMEGA-3.PNG'),
+        percentage_off: "7% Off",
+        product_name: "Omega 3",
+        wght: "4.4 lb Choco Crispers",
+        new_price: "5,099",
+        old_price: "5,499",
+    },
+    {
+        id: 7,
+        product_uri: require('../Assets/Home/HomeProducts/PURE-ISOLATE-2KG-CF.PNG'),
+        percentage_off: "7% Off",
+        product_name: "Pure isolate 2kg CF",
+        wght: "4.4 lb Choco Crispers",
+        new_price: "5,099",
+        old_price: "5,499",
+    },
+    {
+        id: 8,
+        product_uri: require('../Assets/Home/HomeProducts/PURE-ISOLATE-2KG-CH.PNG'),
+        percentage_off: "7% Off",
+        product_name: "Pure isolate 2kg CH",
+        wght: "4.4 lb Choco Crispers",
+        new_price: "5,099",
+        old_price: "5,499",
+    },
+    {
+        id: 9,
+        product_uri: require('../Assets/Home/HomeProducts/PURE-ISOLATE-2KG-MK.PNG'),
+        percentage_off: "7% Off",
+        product_name: "Pure isolate 2kg MK",
+        wght: "4.4 lb Choco Crispers",
+        new_price: "5,099",
+        old_price: "5,499",
+    },
+    {
+        id: 10,
+        product_uri: require('../Assets/Home/HomeProducts/PURE-MASS-GAINER-3KG-CF-(1).PNG'),
+        percentage_off: "7% Off",
+        product_name: "Pure mass gainer 3kg CF",
+        wght: "4.4 lb Choco Crispers",
+        new_price: "5,099",
+        old_price: "5,499",
+    },
+    {
+        id: 12,
+        product_uri: require('../Assets/Home/HomeProducts/PURE-MASS-GAINER-3KG-CH.PNG'),
+        percentage_off: "7% Off",
+        product_name: "Pure mass gainer 3kg CF",
+        wght: "4.4 lb Choco Crispers",
+        new_price: "5,099",
+        old_price: "5,499",
+    },
+    {
+        id: 13,
+        product_uri: require('../Assets/Home/HomeProducts/PURE-MASS-GAINER-3KG-SB.PNG'),
+        percentage_off: "7% Off",
+        product_name: "Pure mass gainer 3kg SB",
+        wght: "4.4 lb Choco Crispers",
+        new_price: "5,099",
+        old_price: "5,499",
+    },
+    {
+        id: 14,
+        product_uri: require('../Assets/Home/HomeProducts/PURE-WHEY-PROTEIN-2KG-CF-(1).PNG'),
+        percentage_off: "7% Off",
+        product_name: "Pure whey protein 2kg CF",
+        wght: "4.4 lb Choco Crispers",
+        new_price: "5,099",
+        old_price: "5,499",
+    },
+    {
+        id: 16,
+        product_uri: require('../Assets/Home/HomeProducts/PURE-WHEY-PROTEIN-2KG-CH.PNG'),
+        percentage_off: "7% Off",
+        product_name: "Pure whey protein 2kg CH",
+        wght: "4.4 lb Choco Crispers",
+        new_price: "5,099",
+        old_price: "5,499",
+    },
+    {
+        id: 17,
+        product_uri: require('../Assets/Home/HomeProducts/PURE-WHEY-PROTEIN-2KG-MK.PNG'),
+        percentage_off: "7% Off",
+        product_name: "Pure whey protein 2kg MK",
+        wght: "4.4 lb Choco Crispers",
+        new_price: "5,099",
+        old_price: "5,499",
+    },
+]
+
+export const tablet = [
     {
         id: 1,
         percentage_off: "7% Off",
@@ -90,7 +196,7 @@ export const PRODUCTS_ARR = [
         wght: "4.4 lb Choco Crispers",
         new_price: "5,099",
         old_price: "5,499",
-        product_uri: require('../Assets/Home/products/WhatsApp Image 2025-05-21 at 10.16.07 PM.jpeg')
+        product_uri: require('../Assets/OurProducts/tab1.png')
     },
     {
         id: 2,
@@ -99,62 +205,44 @@ export const PRODUCTS_ARR = [
         wght: "6.6 lb Chocolate",
         new_price: "2,749",
         old_price: "4,299",
-        product_uri: require('../Assets/Home/products/WhatsApp Image 2025-05-21 at 10.16.07 PM (1).jpeg')
+        product_uri: require('../Assets/OurProducts/tab2.png')
     },
     {
         id: 3,
-        percentage_off: "36% Off",
-        product_name: "MuscleBlaze Pre Workout WrathX 0.75 lb Cola Frost & Creatine...",
-        wght: "",
-        new_price: "1,749",
-        old_price: "2,748",
-        product_uri: require('../Assets/Home/products/WhatsApp Image 2025-05-21 at 10.16.08 PM.jpeg')
+        percentage_off: "7% Off",
+        product_name: "Biozyme Performance Whey,",
+        wght: "4.4 lb Choco Crispers",
+        new_price: "5,099",
+        old_price: "5,499",
+        product_uri: require('../Assets/OurProducts/tab3.png')
     },
-    //     {
-    //         id: 4,
-    //         percentage_off: "30% Off",
-    //         product_name: "Biozyme 5 in 1 Multivitamin,",
-    //         wght: "90 tablet(s) Unflavoured",
-    //         new_price: "899",
-    //         old_price: "1,299",
-    //         product_uri: require('../Assets/Home/products/prd_3542923-MuscleBlaze-Biozyme-5-in-1-Multivitamin-90-tablets-Unflavoured_c_m.webp')
-    //     },
-    //     {
-    //         id: 5,
-    //         percentage_off: "16% Off",
-    //         product_name: "High Protein Peanut Butter",
-    //         wght: "1 Kg Dark Chocolate Creamy",
-    //         new_price: "625",
-    //         old_price: "749",
-    //         product_uri: require('../Assets/Home/products/prd_3577745-MuscleBlaze-Biozyme-Performance-Whey-4.webp')
-    //     },
-    //     {
-    //         id: 6,
-    //         percentage_off: "36% Off",
-    //         product_name: "MuscleBlaze Pre Workout WrathX 0.75 lb Cola Frost & Creatine...",
-    //         wght: "",
-    //         new_price: "1,749",
-    //         old_price: "2,748",
-    //         product_uri: require('../Assets/Home/products/prd_3251359-MuscleBlaze-Super-Gainer-XXL-Weight-Gainer-6.webp')
-    //     },
-    //     {
-    //         id: 7,
-    //         percentage_off: "30% Off",
-    //         product_name: "Biozyme 5 in 1 Multivitamin,",
-    //         wght: "90 tablet(s) Unflavoured",
-    //         new_price: "899",
-    //         old_price: "1,299",
-    //         product_uri: require('../Assets/Home/products/prd_3542923-MuscleBlaze-Biozyme-5-in-1-Multivitamin-90-tablets-Unflavoured_c_m.webp')
-    //     },
-    //     {
-    //         id: 8,
-    //         percentage_off: "16% Off",
-    //         product_name: "High Protein Peanut Butter",
-    //         wght: "1 Kg Dark Chocolate Creamy",
-    //         new_price: "625",
-    //         old_price: "749",
-    //         product_uri: require('../Assets/Home/products/prd_3577745-MuscleBlaze-Biozyme-Performance-Whey-4.webp')
-    //     }
+    {
+        id: 4,
+        percentage_off: "36% Off",
+        product_name: "Super Gainer XXL Weight Gainer,",
+        wght: "6.6 lb Chocolate",
+        new_price: "2,749",
+        old_price: "4,299",
+        product_uri: require('../Assets/OurProducts/tab4.png')
+    },
+    {
+        id: 5,
+        percentage_off: "7% Off",
+        product_name: "Biozyme Performance Whey,",
+        wght: "4.4 lb Choco Crispers",
+        new_price: "5,099",
+        old_price: "5,499",
+        product_uri: require('../Assets/OurProducts/tab5.png')
+    },
+    {
+        id: 6,
+        percentage_off: "36% Off",
+        product_name: "Super Gainer XXL Weight Gainer,",
+        wght: "6.6 lb Chocolate",
+        new_price: "2,749",
+        old_price: "4,299",
+        product_uri: require('../Assets/OurProducts/tab6.png')
+    },
 ]
 
 const Home = () => {
@@ -226,27 +314,7 @@ const Home = () => {
 
                     {/* Products container starts here */}
                     <div className="products__container_grid__row">
-                        {
-                            PRODUCTS_ARR && PRODUCTS_ARR?.map((i, index) => (
-                                <div key={index} onClick={() => navigate(`/products/${i.id}/${i.product_name}`)}>
-                                    <div className='svg__icon'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="50.216" height="68.757" viewBox="0 0 50.216 68.757">
-                                            <path id="Group_427321710" data-name="Group 427321710" d="M35.389-5H.172V17.683s0,0,0,0V38.563c0,.483.452.918,1.146,1.1a2.653,2.653,0,0,0,2.023-.259l3.938-2.532,3.938,2.532a2.638,2.638,0,0,0,2.625,0l3.938-2.532,3.938,2.532a2.639,2.639,0,0,0,2.625,0l3.938-2.533,3.938,2.533a2.654,2.654,0,0,0,2.023.259c.694-.185,1.146-.62,1.146-1.1V-5Z" transform="translate(-0.172 5)" fill="#23a247" fill-rule="evenodd" />
-                                        </svg>
-                                        <p>20% <br /> OFF</p>
-                                    </div>
-                                    <img src={i.product_uri} alt="" />
-                                    <div>
-                                        <h3>{i.product_name}</h3>
-                                        <p>{i.wght}</p>
-                                        <p>
-                                            ₹{i.new_price} <span className='old__price'>₹{i.old_price}</span>&nbsp;&nbsp; <span className='save__price'>Save ₹{i.percentage_off}</span>
-                                        </p>
-                                    </div>
-                                    <Button>Add To Cart</Button>
-                                </div>
-                            ))
-                        }
+                        <Products PRODUCTS_ARR={PRODUCTS} />
                     </div>
 
                     <div className='all__products'>
